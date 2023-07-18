@@ -6,7 +6,7 @@ jobs:
       uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
       with:
         environment: "prod"
-        USERNAME: "XYZ"                 
+        username: "XYZ"                 
       
     # call-workflow-A_dev:     
     #   uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
