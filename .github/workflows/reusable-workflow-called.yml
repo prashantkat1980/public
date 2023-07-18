@@ -5,7 +5,7 @@ on:
 #     branches: [ main ]
   workflow_call:
     inputs:
-      username:
+      environment:
         type: string
         description: "input user name"
         required: true
@@ -17,15 +17,22 @@ on:
 jobs:
   development:
     runs-on: ubuntu-latest
+    if: inputs.environment == 'dev'
     steps:
       - name: run a Hello Script
-        run: echo Hello, ${{ inputs.username }}
-        
+        run: echo Hello, ${{ env.username }}
+        env:
+          username: ${{ secrets.username }}
+          environment: "dev"
         
         
   production:
     runs-on: ubuntu-latest
-    needs: staging
+    #needs: development
+    if: inputs.environment == 'prod'
     steps:
       - name: run a Hello Script
-        run: echo Hello, ${{ inputs.username }}
+        run: echo Hello, ${{ env.username }}
+        env:
+          username: ${{ secrets.username }}
+          environment: "prod"

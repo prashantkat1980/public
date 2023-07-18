@@ -6,14 +6,12 @@ jobs:
       uses: prashantkat1980/ecr10072023/.github/workflows/reusable-workflow-called.yml@main
       with:
         environment: "prod"                 
-      secrets:
-         username: ${{ secrets.username }}
+      
     call-workflow-A_dev:     
       uses: prashantkat1980/ecr10072023/.github/workflows/reusable-workflow-called.yml@main
       with:
-        environment: "dev"    #    
-      secrets:
-        username: ${{ secrets.username }}   
+        environment: "dev"       
+        
                
     #     name: Terraform_Plan_DEV
     #     runs-on: ubuntu-latest       
