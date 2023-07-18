@@ -37,5 +37,5 @@ jobs:
         run: echo "Hello, $username"
         env:          
           environment: "prod"
-          username: ${{ secrets.username }}
+          username: ${{ vars.USERNAME }}
           
