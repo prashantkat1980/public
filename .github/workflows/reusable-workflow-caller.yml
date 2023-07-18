@@ -3,12 +3,12 @@ on:
   workflow_dispatch:   
 jobs:
     call-workflow-A_prod:       
-      uses: prashantkat1980/ecr10072023/.github/workflows/reusable-workflow-called.yml@main
+      uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
       with:
         environment: "prod"                 
       
     call-workflow-A_dev:     
-      uses: prashantkat1980/ecr10072023/.github/workflows/reusable-workflow-called.yml@main
+      uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
       with:
         environment: "dev"       
         
