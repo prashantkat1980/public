@@ -20,9 +20,10 @@ jobs:
     if: inputs.environment == 'dev'
     steps:
       - name: run a Hello Script
-        run: echo Hello, ${{secrets.USERNAME}}
+        run: echo Hello, $username
         env:          
           environment: "dev"
+          username: ${{ secrets.USERNAME }}
         
         
   production:
@@ -31,6 +32,7 @@ jobs:
     if: inputs.environment == 'prod'
     steps:
       - name: run a Hello Script
-        run: echo Hello, ${secrets.USERNAME}
+        run: echo Hello, $USERNAME
         env:          
           environment: "prod"
+          username: ${{ secrets.USERNAME }}
