@@ -20,11 +20,10 @@ jobs:
     if: inputs.environment == 'dev'
     steps:
       - name: run a Hello Script
-        run: echo Hello, ${{ env.username }}
+        run: echo Hello, $var.username
         env:          
           environment: "dev"
-          username: var.username
-        
+          
         
   production:
     runs-on: ubuntu-latest
@@ -32,7 +31,7 @@ jobs:
     if: inputs.environment == 'prod'
     steps:
       - name: run a Hello Script
-        run: echo Hello, ${{ env.username }}
+        run: echo Hello, $var.username
         env:          
           environment: "prod"
-          username: ${{ secrets.username }}
+          
