@@ -10,7 +10,9 @@ on:
         description: "input user name"
         required: true
         
-        
+permissions:
+  id-token: write
+  contents: read        
     # secrets:
     #   token:
     #     required: true                             
@@ -20,9 +22,10 @@ jobs:
     if: inputs.environment == 'dev'
     steps:
       - name: run a Hello Script
-        run: echo Hello, var.username
+        run: echo "Hello, $username"
         env:          
           environment: "dev"
+          username: ${{ secrets.USERNAME}}
           
         
   production:
@@ -31,7 +34,7 @@ jobs:
     if: inputs.environment == 'prod'
     steps:
       - name: run a Hello Script
-        run: echo Hello, $username
+        run: echo "Hello, $username"
         env:          
           environment: "prod"
           username: ${{ secrets.username }}

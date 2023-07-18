@@ -1,6 +1,10 @@
 name: reusable-workflow-caller
 on:
-  workflow_dispatch:   
+  workflow_dispatch:
+permissions:
+  id-token: write
+  contents: read
+     
 jobs:
     call-workflow-A_prod:       
       uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
