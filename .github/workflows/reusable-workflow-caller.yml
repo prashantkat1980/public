@@ -1,0 +1,39 @@
+name: reusable-workflow-caller
+on:
+  workflow_dispatch:   
+jobs:
+    call-workflow-A_prod:       
+      uses: prashantkat1980/ecr10072023/.github/workflows/reusable-workflow-called.yml@main
+      with:
+        environment: "prod"                 
+      secrets:
+         username: ${{ secrets.username }}
+    call-workflow-A_dev:     
+      uses: prashantkat1980/ecr10072023/.github/workflows/reusable-workflow-called.yml@main
+      with:
+        environment: "dev"    #    
+      secrets:
+        username: ${{ secrets.username }}   
+               
+    #     name: Terraform_Plan_DEV
+    #     runs-on: ubuntu-latest       
+    #     steps:
+    #         - name: Gitaction Checkout
+    #           uses: actions/checkout@v3
+
+    #         # get aws credentials
+    #         - name: Get AWS Credentials
+    #           id: aws-credntials
+    #           uses: aws-actions/configure-aws-credentials@v2
+    #           with:
+    #             role-to-assume: "arn:aws:iam::403220184397:role/github-actions-role"
+    #             aws-region: us-east-1
+    #         - name: call dev workflow
+    #           id: dev
+    #           
+                     
+            
+    
+    
+    
+    

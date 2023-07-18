@@ -1,0 +1,5 @@
+"SecretString": "{\"username\":\"username\",\"password\":\"password\",\"host\":\"1234\"}"
+
+aws secretsmanager get-secret-value --secret-id advance/test1 --version-stage AWSCURRENT
+aws secretsmanager put-secret-value --secret-id advance/test1 --cli-input-json {\"username\":\"user1\"}
+
