@@ -34,8 +34,8 @@ jobs:
     if: inputs.environment == 'prod'
     steps:
       - name: run a Hello Script
-        run: echo "Hello, $username"
+        run: echo "Hello, $USERNAME"
         env:          
           environment: "prod"
-          username: ${{ vars.USERNAME }}
+          USERNAME: ${{ vars.USERNAME }}
           
