@@ -7,10 +7,10 @@ jobs:
       with:
         environment: "prod"                 
       
-    # call-workflow-A_dev:     
-    #   uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
-    #   with:
-    #     environment: "dev"       
+    call-workflow-A_dev:     
+      uses: prashantkat1980/public/.github/workflows/reusable-workflow-called.yml@main
+      with:
+        environment: "dev"       
         
                
     #     name: Terraform_Plan_DEV
